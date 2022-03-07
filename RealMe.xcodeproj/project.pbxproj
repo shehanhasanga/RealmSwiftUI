@@ -14,6 +14,10 @@
 		BEB1CFE727D5A006007AD975 /* RealMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1CFE627D5A006007AD975 /* RealMeTests.swift */; };
 		BEB1CFF127D5A006007AD975 /* RealMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1CFF027D5A006007AD975 /* RealMeUITests.swift */; };
 		BEB1CFF327D5A006007AD975 /* RealMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1CFF227D5A006007AD975 /* RealMeUITestsLaunchTests.swift */; };
+		BEB1D00127D5A3AF007AD975 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BEB1D00027D5A3AF007AD975 /* Realm */; };
+		BEB1D00327D5A3AF007AD975 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEB1D00227D5A3AF007AD975 /* RealmSwift */; };
+		BEB1D00627D5C950007AD975 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1D00527D5C950007AD975 /* Home.swift */; };
+		BEB1D00927D5C9CE007AD975 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1D00827D5C9CE007AD975 /* TaskItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 		BEB1CFEC27D5A006007AD975 /* RealMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB1CFF027D5A006007AD975 /* RealMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealMeUITests.swift; sourceTree = "<group>"; };
 		BEB1CFF227D5A006007AD975 /* RealMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BEB1D00527D5C950007AD975 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BEB1D00827D5C9CE007AD975 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB1D00327D5A3AF007AD975 /* RealmSwift in Frameworks */,
+				BEB1D00127D5A3AF007AD975 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,8 @@
 		BEB1CFD427D5A004007AD975 /* RealMe */ = {
 			isa = PBXGroup;
 			children = (
+				BEB1D00727D5C9BF007AD975 /* Model */,
+				BEB1D00427D5C942007AD975 /* View */,
 				BEB1CFD527D5A004007AD975 /* RealMeApp.swift */,
 				BEB1CFD727D5A004007AD975 /* ContentView.swift */,
 				BEB1CFD927D5A006007AD975 /* Assets.xcassets */,
@@ -127,6 +137,22 @@
 			path = RealMeUITests;
 			sourceTree = "<group>";
 		};
+		BEB1D00427D5C942007AD975 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1D00527D5C950007AD975 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEB1D00727D5C9BF007AD975 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1D00827D5C9CE007AD975 /* TaskItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +169,10 @@
 			dependencies = (
 			);
 			name = RealMe;
+			packageProductDependencies = (
+				BEB1D00027D5A3AF007AD975 /* Realm */,
+				BEB1D00227D5A3AF007AD975 /* RealmSwift */,
+			);
 			productName = RealMe;
 			productReference = BEB1CFD227D5A004007AD975 /* RealMe.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +245,9 @@
 				Base,
 			);
 			mainGroup = BEB1CFC927D5A004007AD975;
+			packageReferences = (
+				BEB1CFFF27D5A3AF007AD975 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = BEB1CFD327D5A004007AD975 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB1CFD827D5A004007AD975 /* ContentView.swift in Sources */,
+				BEB1D00627D5C950007AD975 /* Home.swift in Sources */,
 				BEB1CFD627D5A004007AD975 /* RealMeApp.swift in Sources */,
+				BEB1D00927D5C9CE007AD975 /* TaskItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +614,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BEB1CFFF27D5A3AF007AD975 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BEB1D00027D5A3AF007AD975 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEB1CFFF27D5A3AF007AD975 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BEB1D00227D5A3AF007AD975 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEB1CFFF27D5A3AF007AD975 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BEB1CFCA27D5A004007AD975 /* Project object */;
 }
